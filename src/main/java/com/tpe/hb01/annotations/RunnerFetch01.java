@@ -18,7 +18,7 @@ public class RunnerFetch01 {
         Transaction transaction = session.beginTransaction();
 
 
-//        3 ways to fetch the data from the DB
+//        3 ways to fetch the data from the DB. Predefined one is methods -> HQL (middle) -> SQL (least)
 //            1. using get()
         Student01 student1 = session.get(Student01.class, 1001);
         System.out.println("student1 = " + student1);
