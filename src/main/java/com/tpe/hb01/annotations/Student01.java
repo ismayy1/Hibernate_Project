@@ -14,7 +14,7 @@ public class Student01 {    // Default table name = lowercase class name -> stud
     @Column(name = "std_name", length = 60, nullable = false, unique = false)
     private String name;
 
-    @Transient  // column will not be created in the DB, the field is just to be used in the code and NOT in the DB
+//    @Transient  // column will not be created in the DB, the field is just to be used in the code and NOT in the DB
     private int grade;
 
 //    @Lob
