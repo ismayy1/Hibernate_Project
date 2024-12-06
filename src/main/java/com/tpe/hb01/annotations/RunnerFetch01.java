@@ -27,14 +27,23 @@ public class RunnerFetch01 {
         System.out.println("student2 = " + student2);
 
 //            2. SQL query
+        /*
         String sqlQuery1 = "SELECT * FROM t_student01";
         List<Object[]> resultList1 = session.createSQLQuery(sqlQuery1).getResultList();
 
         for (Object[] objects: resultList1) {
             System.out.println(Arrays.toString(objects));
         }
+        */
 
 //            3. HQL query (Hibernate Query Language)
+        String hqlQuery1 = "FROM Student01";    // we use the actual name of the class, and NOT the name we changed
+        List<Student01> students = session.createQuery(hqlQuery1, Student01.class).getResultList();
+
+        for (Student01 student01: students) {
+            System.out.println(student01);
+        }
+
 
 
         transaction.commit();
