@@ -16,4 +16,41 @@ public class Student01 {    // Default table name = lowercase class name -> stud
 
     @Transient  // column will not be created in the DB, the field is just to be used in the code and NOT in the DB
     private int grade;
+
+//    @Lob
+//    private byte[] image;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    @Override
+    public String toString() {
+        return "Student01{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade=" + grade +
+                '}';
+    }
 }
