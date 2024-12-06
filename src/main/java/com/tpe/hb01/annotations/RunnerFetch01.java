@@ -37,12 +37,28 @@ public class RunnerFetch01 {
         */
 
 //            3. HQL query (Hibernate Query Language)
+        /*
         String hqlQuery1 = "FROM Student01";    // we use the actual name of the class, and NOT the name we changed
         List<Student01> students = session.createQuery(hqlQuery1, Student01.class).getResultList();
 
         for (Student01 student01: students) {
             System.out.println(student01);
         }
+        */
+
+
+//        Exercises
+//        1. SQL
+        String sqlQuery2 = "SELECT * FROM t_student01 WHERE std_name = 'Bob Smith'";
+        Object[] uniqueResult1 = (Object[]) session.createSQLQuery(sqlQuery2).uniqueResult();
+
+        System.out.println(Arrays.toString(uniqueResult1));
+
+
+//        2. HQL
+        String hqlQuery2 = "FROM Student01 WHERE name = 'Bob Smith'";
+        Student01 uniqueResult2 = session.createQuery(hqlQuery2, Student01.class).uniqueResult();
+        System.out.println("uniqueResult2 = " + uniqueResult2);
 
 
 
