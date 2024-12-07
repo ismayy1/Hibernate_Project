@@ -62,6 +62,16 @@ public class RunnerFetch01 {
 
 
 
+//        HQL -> Get students with grade 90
+        String hqlQuery3 = "SELECT s.id, s.name FROM Student01 s WHERE s.grade = 90";
+
+        List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
+
+        for (Object[] objects: resultList3) {
+            System.out.println(Arrays.toString(objects));
+        }
+
+
         transaction.commit();
         session.close();
         sessionFactory.close();
