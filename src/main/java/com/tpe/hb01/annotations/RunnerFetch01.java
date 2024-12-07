@@ -66,10 +66,20 @@ public class RunnerFetch01 {
         String hqlQuery3 = "SELECT s.id, s.name FROM Student01 s WHERE s.grade = 90";
 
         List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
+        // we could use Student01.class as the second parameter and return Student01, but used the HQL as SQL
 
         for (Object[] objects: resultList3) {
             System.out.println(Arrays.toString(objects));
         }
+
+//        List students in descending order by ID
+        String hqlQuery4 = "FROM Student01 s ORDER BY s.id DESC";
+        List<Student01> resultList4 = session.createQuery(hqlQuery4, Student01.class).getResultList();
+
+        for (Student01 student: resultList4) {
+            System.out.println("student = " + student);
+        }
+
 
 
         transaction.commit();
