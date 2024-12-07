@@ -66,7 +66,8 @@ public class RunnerFetch01 {
         String hqlQuery3 = "SELECT s.id, s.name FROM Student01 s WHERE s.grade = 90";
 
         List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
-        // we could use Student01.class as the second parameter and return Student01, but used the HQL as SQL
+        // we're selecting only two fields, and if we used Student01 class in the parameter, Hibernate will not be able
+        // to create the Student01 object. That's why we are working with Object[]
 
         for (Object[] objects: resultList3) {
             System.out.println(Arrays.toString(objects));
