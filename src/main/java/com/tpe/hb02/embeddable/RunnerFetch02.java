@@ -16,8 +16,9 @@ public class RunnerFetch02 {
         Transaction transaction = session.beginTransaction();
 
 
-
-
+        Student02 student = session.get(Student02.class, 1001);
+        System.out.println("student = " + student); // no address, toString override
+        System.out.println("student.getAddress() = " + student.getAddress());
 
 
         transaction.commit();

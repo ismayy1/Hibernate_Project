@@ -49,12 +49,23 @@ public class Student02 {
         this.address = address;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Student02{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", grade=" + grade +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Student02{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
+                ", address=" + address +
                 '}';
     }
 }
