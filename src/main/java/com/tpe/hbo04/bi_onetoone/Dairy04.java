@@ -46,7 +46,6 @@ public class Dairy04 {
         return "Dairy04{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", student=" + student +
                 '}';
     }
 }

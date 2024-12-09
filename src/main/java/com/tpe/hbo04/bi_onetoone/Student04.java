@@ -1,5 +1,6 @@
 package com.tpe.hbo04.bi_onetoone;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -10,6 +11,7 @@ public class Student04 {
     @Id
     private int id;
 
+    @Column(name = "std_name")
     private String name;
 
     private int grade;
