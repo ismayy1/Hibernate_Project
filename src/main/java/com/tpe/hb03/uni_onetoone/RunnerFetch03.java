@@ -24,6 +24,14 @@ public class RunnerFetch03 {
 //        TASK: Use the get() to fetch the dairy with the ID 101
         Dairy dairy1 = session.get(Dairy.class, 101);
 
+        System.out.println(student1);
+
+        System.out.println("=====================");
+        System.out.println(dairy1);
+
+        System.out.println("=====================");
+        System.out.println(dairy1.getStudent());
+
 
 
         transaction.commit();
