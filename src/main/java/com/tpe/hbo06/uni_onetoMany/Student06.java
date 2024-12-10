@@ -17,7 +17,9 @@ public class Student06 {
 
 //    "One" side of the relation
     @OneToMany
-    @JoinColumn
+    @JoinColumn   // if @JoinColumn isn't used here, the annotation will be used as a fallback operation
+//    the annotation creates a separate table with 2 columns, IDs of each table. keeps track of our relation using that table
+//    However, @JoinColumn is better for One-To-Many relations, because using an extra table mans more fetch queries.
     private List<Book06> bookList = new ArrayList<>();
 
     public int getId() {
