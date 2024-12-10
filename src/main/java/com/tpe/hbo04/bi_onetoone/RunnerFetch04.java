@@ -61,6 +61,16 @@ public class RunnerFetch04 {
         }
 
 
+//        TASK: fetch names of all the students and dairies.
+        String hql3 = "SELECT s.name, d.name FROM Student04 s FULL JOIN FETCH Dairy04 d ON s.id = d.student";
+
+        List<Object[]> resultList3 = session.createQuery(hql3).getResultList();
+
+        for (Object[] result: resultList3) {
+            System.out.println(Arrays.toString(result));
+        }
+
+
         transaction.commit();
         session.close();
         sessionFactory.close();

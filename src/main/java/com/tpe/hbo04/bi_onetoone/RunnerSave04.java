@@ -36,6 +36,10 @@ public class RunnerSave04 {
         dairy2.setName("Mike's Dairy");
         dairy2.setStudent(student2);
 
+        Dairy04 dairy3 = new Dairy04();
+        dairy3.setId(103);
+        dairy3.setName("Dairy that doesn't belong to no one");
+
 
 
 
@@ -54,6 +58,7 @@ public class RunnerSave04 {
 
         session.save(dairy1);
         session.save(dairy2);
+        session.save(dairy3);
 
 
         transaction.commit();
