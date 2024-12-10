@@ -1,4 +1,4 @@
-package com.tpe.hb05.manytoone;
+package com.tpe.hbo05.manytoone;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -53,6 +53,7 @@ public class Student05 {
         return createOn;
     }
 
+    // we don't want the users to be able to set the created time of the students.
 //    public void setCreateOn(LocalDateTime createOn) {
 //        this.createOn = createOn;
 //    }
