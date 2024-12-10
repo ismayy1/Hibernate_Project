@@ -52,7 +52,7 @@ public class RunnerFetch04 {
 //        });
 
 //        TASK: fetch all students, and if students have dairies, fetch their dairies too -> use LEFT JOIN
-        String hql2 = "FROM Student04 s LEFT JOIN FETCH Dairy04 d ON s.id = d.student";
+        String hql2 = "SELECT s.name, d.name FROM Student04 s LEFT JOIN FETCH Dairy04 d ON s.id = d.student";
 
         List<Object[]> resultList2 = session.createQuery(hql2).getResultList();
 

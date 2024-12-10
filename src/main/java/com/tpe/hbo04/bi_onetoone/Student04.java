@@ -11,7 +11,6 @@ public class Student04 {
     @Id
     private int id;
 
-//    @Column(name = "std_name")
     private String name;
 
     private int grade;
