@@ -13,7 +13,7 @@ public class Student08 {
     @Column(name = "std_name", nullable = false)
     private String name;
 
-    private int greade;
+    private int grade;
 
     @ManyToMany
     @JoinTable(
@@ -41,12 +41,12 @@ public class Student08 {
         this.name = name;
     }
 
-    public int getGreade() {
-        return greade;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setGreade(int greade) {
-        this.greade = greade;
+    public void setGrade(int greade) {
+        this.grade = greade;
     }
 
     public List<Book08> getBookList() {
@@ -62,7 +62,7 @@ public class Student08 {
         return "Student08{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", greade=" + greade +
+                ", grade=" + grade +
                 ", bookList=" + bookList +
                 '}';
     }
