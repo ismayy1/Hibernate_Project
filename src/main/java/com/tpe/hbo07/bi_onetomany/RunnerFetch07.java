@@ -55,8 +55,8 @@ public class RunnerFetch07 {
 //        session.delete(student2);
 
 //        TASK:
-        Student07 student3 = session.get(Student07.class, 1003);
-        session.delete(student3);
+        Student07 student3 = session.get(Student07.class, 1002);
+        student3.getBookList().set(0, null);    // orphan removal gets triggered here
 
 
 
