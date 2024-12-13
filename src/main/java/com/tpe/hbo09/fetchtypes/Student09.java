@@ -15,7 +15,17 @@ public class Student09 {
 
     private int grade;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    /*
+        If the second side (inverse side) of our relation is Many -> LAZY FETCH
+        ================= || ============================ is One -> EAGER FETCH
+
+        OneToMany --> LAZY
+        ManyToMany --> LAZY
+        OneToOne --> EAGER
+        ManyToOne --> EAGER
+     */
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Book09> bookList = new ArrayList<>();
 
     public int getId() {
