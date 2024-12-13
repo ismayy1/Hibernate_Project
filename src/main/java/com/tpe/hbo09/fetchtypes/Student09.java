@@ -1,9 +1,6 @@
 package com.tpe.hbo09.fetchtypes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +15,48 @@ public class Student09 {
 
     private int grade;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Book09> bookList = new ArrayList<>();
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public List<Book09> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book09> bookList) {
+        this.bookList = bookList;
+    }
+
+    @Override
+    public String toString() {
+        return "Student09{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade=" + grade +
+                ", bookList=" + bookList +
+                '}';
+    }
 }
