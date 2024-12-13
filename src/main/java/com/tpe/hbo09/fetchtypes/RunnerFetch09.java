@@ -23,12 +23,20 @@ public class RunnerFetch09 {
 
 
         Student09 student1 = session.get(Student09.class, 1002);
-        System.out.println("student1 = " + student1);
+//        System.out.println("student1 = " + student1);
 
+//        =====================
+//        Book09 book1 = session.get(Book09.class, 101);
 
 
         transaction.commit();
         session.close();
+
+//        Here we have no communication with the DB
+        for (Book09 book: student1.getBookList()) {
+            System.out.println(book);
+        }
+
         sessionFactory.close();
     }
 }
