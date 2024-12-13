@@ -6,7 +6,13 @@ import javax.persistence.*;
 public class Student10 {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "sequence", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "sequence",
+            sequenceName = "student_seq",
+            initialValue = 1000,
+            allocationSize = 10 // in the cache mechanism, keep 10 IDs ready
+    )
     private int id;
 
         /*
@@ -22,7 +28,7 @@ public class Student10 {
 
      */
 
-    @Column
+    @Column(name = "std_name", nullable = false, unique = true)
     private String name;
 
     private int grade;

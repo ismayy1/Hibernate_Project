@@ -27,6 +27,9 @@ public class RunnerSave10 {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
 
+        session.save(student1);
+        session.save(student2);
+
         tx.commit();
         session.close();
         sf.close();
