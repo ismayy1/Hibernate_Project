@@ -25,8 +25,7 @@ public class Student10 {
             GenerationType.AUTO ---> Hibernate automatically finds the best strategy according to the database.
 
             GenerationType.TABLE --> Slowest one. Because of this, it is the least used one. Creates an extra table to generate Ids.
-
-     */
+         */
 
     @Column(name = "std_name", nullable = false, unique = true)
     private String name;
