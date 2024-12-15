@@ -1,9 +1,6 @@
 package com.tpe.hbo07.bi_onetomany;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Book07 {
@@ -11,6 +8,7 @@ public class Book07 {
     @Id
     private int id;
 
+    @Column
     private String name;
 
     @ManyToOne
