@@ -11,6 +11,7 @@ public class Student04 {
     @Id
     private int id;
 
+    @Column
     private String name;
 
     private int grade;
