@@ -1,5 +1,6 @@
 package com.tpe.hb02.embeddable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 //  With @Embeddable, a table for Address won't be created, but fields in the Address class will be added to
@@ -7,7 +8,9 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Address {
 
+    @Column
     private String street;
+    @Column
     private String city;
     private String country;
     private String zipCode;
