@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Student10 {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)   // generates the id automatically as an identity for the student, unique
     @GeneratedValue(generator = "sequence", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "sequence",
             sequenceName = "student_seq",
