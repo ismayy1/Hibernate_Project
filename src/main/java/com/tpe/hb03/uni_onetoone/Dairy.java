@@ -1,9 +1,6 @@
 package com.tpe.hb03.uni_onetoone;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Dairy {
@@ -11,6 +8,7 @@ public class Dairy {
     @Id
     private int id;
 
+    @Column
     private String name;
 
     @OneToOne
