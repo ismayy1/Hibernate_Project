@@ -33,13 +33,13 @@
 
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-jcache</artifactId>
+            <artifactId>hibernate-jcache</artifactId>   <!--Second Level Cache-->
             <version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
+            <artifactId>ehcache</artifactId>    <!--Allows us to use the second level cache-->
             <version>${ehcache.version}</version>
         </dependency>
 

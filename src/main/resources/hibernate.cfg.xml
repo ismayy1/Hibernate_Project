@@ -27,5 +27,15 @@
         <property name="show_sql">true</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
+        <!--        -->
+        <!-- Second Level Cache and Query Cache activated-->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <!-- Configurations for EhCache and JCache included into Hibernate configuration -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
     </session-factory>
 </hibernate-configuration>
