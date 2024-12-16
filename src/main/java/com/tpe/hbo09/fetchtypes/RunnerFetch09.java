@@ -32,7 +32,7 @@ public class RunnerFetch09 {
         transaction.commit();
         session.close();
 
-//        Here we have no communication with the DB
+//        Here we have no communication with the DB    // works only with eager fetch
         for (Book09 book: student1.getBookList()) {
             System.out.println(book);
         }

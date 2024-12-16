@@ -24,8 +24,6 @@ public class Student09 {
         OneToOne --> EAGER
         ManyToOne --> EAGER
      */
-
-
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    We can change the fetch type using "fetch" attribute
     private List<Book09> bookList = new ArrayList<>();
