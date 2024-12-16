@@ -13,6 +13,8 @@ package com.tpe.hbo11.caching;
             - Session factory level caching. Can be used for multiple sessions.
             - Can be activated from hibernate.cfg.xml.
 
+            -- we need two dependencies for the second level cache
+
     3)	Query Cache:
             - Used for queries.
             - Can be activated from hibernate.cfg.xml

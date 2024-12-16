@@ -20,6 +20,11 @@ public class RunnerFetch11 {
         System.out.println("************** First Get Method --> For Student #1 **************");
         Students11 students1 = session.get(Students11.class, 1);
 
+        session.clear();    // clears our sessionCache (First Level Cache)
+
+        System.out.println("************** Second Get Method --> For Student #1 **************");
+        Students11 students2 = session.get(Students11.class, 1);
+
 
         transaction.commit();
         session.close();    // First level cache dies
