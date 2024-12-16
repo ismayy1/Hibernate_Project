@@ -24,9 +24,12 @@ package com.tpe.hbo11.caching;
         Both cache type increases performance, however they are on different levels and designed for different scenarios.
 */
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Students11 {
 
     @Id
