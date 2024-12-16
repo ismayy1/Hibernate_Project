@@ -13,21 +13,34 @@ public class RunnerFetch11 {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Students11.class);
         SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
+        Session session1 = sessionFactory.openSession();
+        Transaction transaction1 = session1.beginTransaction();
 
 
         System.out.println("************** First Get Method --> For Student #1 **************");
-        Students11 students1 = session.get(Students11.class, 1);
+        Students11 students1 = session1.get(Students11.class, 1);
 
-        session.clear();    // clears our sessionCache (First Level Cache)
+        session1.clear();    // clears our sessionCache (First Level Cache)
 
         System.out.println("************** Second Get Method --> For Student #1 **************");
-        Students11 students2 = session.get(Students11.class, 1);
+        Students11 students2 = session1.get(Students11.class, 1);
 
 
-        transaction.commit();
-        session.close();    // First level cache dies
+        transaction1.commit();
+        session1.close();    // First level cache dies
+
+//        ===================
+        Session session2 = sessionFactory.openSession();
+        Transaction transaction2 = session2.beginTransaction();
+
+
+        System.out.println("************** After closing session1 --> For Student #1 **************");
+        Students11 students3 = session2.get(Students11.class, 1);
+
+        transaction2.commit();
+        session2.close();
+//        ===================
+
         sessionFactory.close(); // We cannot create sessions anymore from this sessionFactory
     }
 }
