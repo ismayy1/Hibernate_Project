@@ -1,14 +1,13 @@
 package com.tpe.hbo11.caching;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Students11 {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID's will begin with 1 and increases
+    private int id; // Integer wrapper class is used bcs the default value is null, we have some safety there
 
     @Column(name = "std_name", nullable = false)
     private String name;
