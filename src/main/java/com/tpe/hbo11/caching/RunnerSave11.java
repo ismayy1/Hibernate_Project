@@ -29,11 +29,13 @@ public class RunnerSave11 {
         Transaction transaction = session.beginTransaction();
 
 
-
+        session.save(students1);
+        session.save(students2);
+        session.save(students3);
 
 
         transaction.commit();
-        session.close();
-        sessionFactory.close();
+        session.close();    // First level cache dies
+        sessionFactory.close(); // We cannot create sessions anymore from this sessionFactory
     }
 }
