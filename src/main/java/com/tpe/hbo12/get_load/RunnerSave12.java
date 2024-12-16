@@ -13,8 +13,8 @@ public class RunnerSave12 {
         student1.setGrade(70);
 
         Student12 student2 = new Student12();
-        student1.setName("Mike");
-        student1.setGrade(70);
+        student2.setName("Mike");
+        student2.setGrade(70);
 
 
         Configuration configuration = new Configuration()

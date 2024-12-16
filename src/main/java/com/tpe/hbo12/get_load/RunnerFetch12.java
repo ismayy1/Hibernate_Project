@@ -42,6 +42,10 @@ public class RunnerFetch12 {
         Student12 student2 = session.load(Student12.class, 2L);
         System.out.println("*************** Load method END Execution ***************");
 
+        System.out.println("----> call to getId()");
+        System.out.println("Student2 ID: " + student2.getId());
+        System.out.println("Student2 name: " + student2.getName());
+
 
 
         transaction.commit();
