@@ -29,7 +29,10 @@ import javax.persistence.*;
 
 @Entity
 @Cacheable
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Student11")
+// Region - the name is used for caching
+// When a row on the DB is updated, student name change for example this updated data
+// will also be cached, and once you want to read the data, it'll be read from the cache and NOT from the DB
 public class Students11 {
 
     @Id
