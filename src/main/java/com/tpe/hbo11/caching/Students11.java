@@ -1,4 +1,26 @@
 package com.tpe.hbo11.caching;
+/*
+    1)	First Level Cache:
+            - This level is always used by default. Always on, there is no way to turn it off.
+            - Every session has its own first level cache, and first level cache caches the data only in that session.
+            - Results of queries done in a session will be stored in a session specific cache.
+            - If there are repetitive queries in a session, the performance will increase, unnecessary database
+            operations will be prevented.
+            - Cached data gets deleted when session is closed.
+
+    2)	Second Level Cache:
+            - Off by default.
+            - Session factory level caching. Can be used for multiple sessions.
+            - Can be activated from hibernate.cfg.xml.
+
+    3)	Query Cache:
+            - Used for queries.
+            - Can be activated from hibernate.cfg.xml
+            - Can cache queries for multiple sessions.
+
+        Query Cache stores results of the queries, the second level cache stores entities and related data instead.
+        Both cache type increases performance, however they are on different levels and designed for different scenarios.
+*/
 
 import javax.persistence.*;
 
@@ -16,10 +38,6 @@ public class Students11 {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
