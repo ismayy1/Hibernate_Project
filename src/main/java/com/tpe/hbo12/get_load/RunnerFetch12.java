@@ -48,6 +48,26 @@ public class RunnerFetch12 {
 
 
 
+
+//        Using get() and load() methods with ID that don't exist in the DB
+        System.out.println("************** Get Method BEGIN Execution **************");
+        Student12 student3 = session.get(Student12.class, 5L);
+        System.out.println("************** Get Method END Execution **************");
+
+        if (student3 != null) {
+            System.out.println("Student3 ID: " + student3.getId());
+        }
+
+
+        System.out.println("************** Load Method BEGIN Execution **************");
+        Student12 student4 = session.load(Student12.class, 10L);
+        System.out.println("************** Load Method END Execution **************");
+
+        System.out.println("Student4 ID: " + student4.getId());
+        System.out.println("Student4 name: " + student4.getName());
+
+
+
         transaction.commit();
         session.close();
         sessionFactory.close();
