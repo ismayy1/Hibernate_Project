@@ -5,12 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class RunnerSave14 {
+public class RunnerFetch14 {
     public static void main(String[] args) {
-
-        Employee employee1 = new Employee();
-        employee1.setName("Martin");
-        employee1.setSalary(30000.0);
 
 
         Configuration configuration = new Configuration()
@@ -21,8 +17,12 @@ public class RunnerSave14 {
         Transaction transaction = session.beginTransaction();
 
 
-        System.out.println("=============> call on session.save()");
-        session.save(employee1);
+        System.out.println("==========> call on session.get()");
+        Employee employee1 = session.get(Employee.class, 1L);
+
+        System.out.println("==========> call on session.delete()");
+        session.delete(employee1);
+
 
 
         transaction.commit();
