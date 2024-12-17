@@ -18,6 +18,33 @@ public class Employee {
     @Column(name = "employee_salary")
     private Double salary;
 
+
+//    Entity LifeCycle methods
+    @PrePersist
+    public void onPrePersist() {
+        System.out.println("*********** PrePersist gets triggered here ***********");
+    }
+
+    @PostPersist
+    public void onPostPersist() {
+        System.out.println("*********** PostPersist gets triggered here ***********");
+    }
+
+    @PostLoad
+    public void onPostLoad() {
+        System.out.println("*********** PostLoad gets triggered here ***********");
+    }
+
+    @PreRemove
+    public void onPreRemove() {
+        System.out.println("*********** PreRemove gets triggered here ***********");
+    }
+
+    @PostRemove
+    public void onPostRemove() {
+        System.out.println("*********** PostRemove gets triggered here ***********");
+    }
+
     public Long getId() {
         return id;
     }
